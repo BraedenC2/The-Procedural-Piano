@@ -33,13 +33,11 @@ static class Program {
                     Save(GetUserInput("Name: "));
                     break;
                 case (4):
-                    
+                    Load(GetUserInput($"File name: "));
                     break;
                 case (5):
                     Console.WriteLine("Thank you for joining us");
-                    ;
-                    break;
-                
+                    return;
                 default:
                     Console.WriteLine("this was not an option");
                     break;
@@ -49,6 +47,22 @@ static class Program {
             // And then here should show a switch statement that allows user options.
             // Create, Play, Save, Load, Exit, and we can add others too. Like... samples maybe.
 
+        }
+
+    }
+
+    static void Load(string fileName) {
+        if (File.Exists(fileName)) {
+            try {
+                musicSequence = File.ReadAllLines(fileName).ToList();
+                Console.WriteLine($"Song loaded from {fileName}!");
+
+            } catch (Exception e) {
+                Console.WriteLine($"Error. {fileName}");
+                Debug.WriteLine($"Loading problem exception: {e}");
+            }
+        } else {
+            Console.WriteLine("File not found");
         }
 
     }

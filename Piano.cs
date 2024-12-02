@@ -33,8 +33,8 @@ namespace The_Procedural_Piano {
             foreach (Thread thread in threads) thread.Join();
 
             // This pauses randomly between chords
-            Random random = new Random(); 
-            Thread.Sleep(random.Next(0,duration));
+            //Random random = new Random(); 
+            Thread.Sleep(duration);
         }
 
         private void PlayNote(Note note) {
@@ -70,27 +70,6 @@ namespace The_Procedural_Piano {
 
         }
     
-        private void LoadNotes(string filePath)
-        {
-            try
-            {
-                 musicalSequence = File.ReadAllLines(filePath).ToList();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"there was an issue {e.Message}");
-            }
-        }
-        private static void SaveSong(string fileName )
-        {
-            try
-            {
-                File.WriteAllLines(fileName, musicalSequence);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"there was an issue {e.Message}");
-            }
-        }
+        
     }
 }
