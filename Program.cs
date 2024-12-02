@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using NAudio.Wave;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using The_Procedural_Piano;
 
@@ -26,6 +27,7 @@ static class Program {
                     CreateSong();
                     break;
                 case (2):
+                    Play();
                     break;
                 case (3):
                     break;
@@ -124,5 +126,40 @@ static class Program {
             }
         }
     }
+
+    static void Play() {
+
+        if (!musicSequence.Any()) {
+
+            Console.WriteLine("There is no song composed yet! Please load or create!");
+            return;
+
+        }
+
+        IInstrument selectedInstrument = ChooseInstrument();
+
+        foreach (string chordString in musicSequence) {
+            int lastCommaIndex = chordString.IndexOf(',');
+            if (lastCommaIndex == -1) {
+                Console.WriteLine($"Invalid chord string format: {chordString}");
+                continue;
+            }
+
+            string notesPart = chordString.Substring(0, lastCommaIndex);
+            List<Note> notes = notesPart.Split(',').Select(noteStr => Enum.Parse<Note>(noteStr)).ToList();
+
+            string durationPart = chordString.Substring(lastCommaIndex + 1);
+            if (!int.TryParse(durationPart, out int duration)) {
+                Console.WriteLine($"Invalid duration");
+                Debug.WriteLine($"Invalid at: {chordString}");
+                continue;
+            }
+
+            selectedInstrument.PlayChord(notes, duration);
+        }
+        Console.WriteLine("Played!");
+    }
+
+
 
 }
