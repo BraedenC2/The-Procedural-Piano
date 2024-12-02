@@ -30,6 +30,7 @@ static class Program {
                     Play();
                     break;
                 case (3):
+                    Save(GetUserInput("Name: "));
                     break;
                 case (4):
                     
