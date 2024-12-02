@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Braed\\source\\repos\\The Procedural Piano\\The Procedural Piano.csproj",
+      "projectUniqueName": "C:\\Users\\Braed\\Source\\Repos\\The-Procedural-Piano\\The Procedural Piano.csproj",
       "projectName": "The Procedural Piano",
-      "projectPath": "C:\\Users\\Braed\\source\\repos\\The Procedural Piano\\The Procedural Piano.csproj",
+      "projectPath": "C:\\Users\\Braed\\Source\\Repos\\The-Procedural-Piano\\The Procedural Piano.csproj",
       "packagesPath": "C:\\Users\\Braed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Braed\\source\\repos\\The Procedural Piano\\obj\\",
+      "outputPath": "C:\\Users\\Braed\\Source\\Repos\\The-Procedural-Piano\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

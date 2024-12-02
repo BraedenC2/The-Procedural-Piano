@@ -12,3 +12,18 @@ C:\Users\Braed\source\repos\The Procedural Piano\obj\Debug\net8.0\refint\The Pro
 C:\Users\Braed\source\repos\The Procedural Piano\obj\Debug\net8.0\The Procedural Piano.pdb
 C:\Users\Braed\source\repos\The Procedural Piano\obj\Debug\net8.0\The Procedural Piano.genruntimeconfig.cache
 C:\Users\Braed\source\repos\The Procedural Piano\obj\Debug\net8.0\ref\The Procedural Piano.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\The Procedural Piano.exe
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\The Procedural Piano.deps.json
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\The Procedural Piano.runtimeconfig.json
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\The Procedural Piano.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\The Procedural Piano.pdb
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.AssemblyInfoInputs.cache
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.AssemblyInfo.cs
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.csproj.CoreCompileInputs.cache
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.sourcelink.json
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\refint\The Procedural Piano.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.pdb
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.genruntimeconfig.cache
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\ref\The Procedural Piano.dll
