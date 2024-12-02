@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using NAudio.Wave;
 
 namespace The_Procedural_Piano {
-    public class WAVCORD : IInstrument {
+    public class Piano : IInstrument {
 
         // This class will need 2 methods probably.
 

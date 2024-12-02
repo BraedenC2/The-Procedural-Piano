@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|c:\\users\\braed\\source\\repos\\the-procedural-piano\\wavcord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|solutionrelative:wavcord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|c:\\users\\braed\\source\\repos\\the-procedural-piano\\iinstrument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|solutionrelative:iinstrument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|c:\\users\\braed\\source\\repos\\the-procedural-piano\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|c:\\users\\braed\\source\\repos\\the-procedural-piano\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|solutionrelative:note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|c:\\users\\braed\\source\\repos\\the-procedural-piano\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|c:\\users\\braed\\source\\repos\\the-procedural-piano\\wavcord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|solutionrelative:wavcord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|c:\\users\\braed\\source\\repos\\the-procedural-piano\\iinstrument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EBF5AB-160E-41A5-833E-85F792C50650}|The Procedural Piano.csproj|solutionrelative:iinstrument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +34,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "WAVCORD.cs",
               "DocumentMoniker": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\WAVCORD.cs",
               "RelativeDocumentMoniker": "WAVCORD.cs",
               "ToolTip": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\WAVCORD.cs",
               "RelativeToolTip": "WAVCORD.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwBMAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T00:35:49.738Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IInstrument.cs",
               "DocumentMoniker": "C:\\Users\\Braed\\Source\\Repos\\The-Procedural-Piano\\IInstrument.cs",
               "RelativeDocumentMoniker": "IInstrument.cs",
@@ -60,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Note.cs",
               "DocumentMoniker": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\Note.cs",
               "RelativeDocumentMoniker": "Note.cs",
@@ -73,13 +73,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T23:42:10.692Z",
               "EditorCaption": ""
