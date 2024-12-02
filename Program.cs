@@ -139,7 +139,7 @@ static class Program {
         IInstrument selectedInstrument = ChooseInstrument();
 
         foreach (string chordString in musicSequence) {
-            int lastCommaIndex = chordString.IndexOf(',');
+            int lastCommaIndex = chordString.LastIndexOf(',');
             if (lastCommaIndex == -1) {
                 Console.WriteLine($"Invalid chord string format: {chordString}");
                 continue;
@@ -160,6 +160,13 @@ static class Program {
         Console.WriteLine("Played!");
     }
 
-
-
+    static void Save(string fileName) {
+        try {
+            File.WriteAllLines(fileName, musicSequence);
+            Console.WriteLine($"Song saved to {fileName}.");
+        } catch (Exception e) {
+            Console.WriteLine($"Error saving");
+            Debug.WriteLine($"At the Save method there is a exception: {e}");
+        }
+    }
 }
