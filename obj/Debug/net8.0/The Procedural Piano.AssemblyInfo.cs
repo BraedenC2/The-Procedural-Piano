@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("The Procedural Piano")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2b29ba95d4b5bf9f23dc3f993b25e8da1d83b2a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+305d27cc6fee8e0606c6db26d99a087135941772")]
 [assembly: System.Reflection.AssemblyProductAttribute("The Procedural Piano")]
 [assembly: System.Reflection.AssemblyTitleAttribute("The Procedural Piano")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -22,15 +22,21 @@ namespace The_Procedural_Piano {
             // Up to you if u wanna change it. If we want to add more chords, we can ;D
             foreach (Note note in notes) {
 
-                Note noteDuplicate = note;
-                Thread thread = new Thread(() => PlayNote(noteDuplicate));
-                threads.Add(thread);
-                thread.Start();
+
+                PlayNote(note);
+
+                // Uncomment this if we wanna keep threads (It sounds better without it, but I'd like to make it
+                // sound more... idk. Give it more ability i guess.
+
+                //Note noteDuplicate = note;
+                //Thread thread = new Thread(() => PlayNote(noteDuplicate));
+                //threads.Add(thread);
+                //thread.Start();
 
             }
 
             // This will make sure that the program waits for the other notes to finish.
-            foreach (Thread thread in threads) thread.Join();
+            //foreach (Thread thread in threads) thread.Join();
 
             // This pauses randomly between chords
             //Random random = new Random(); 
