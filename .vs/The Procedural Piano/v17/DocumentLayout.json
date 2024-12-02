@@ -36,27 +36,25 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Piano.cs",
-              "DocumentMoniker": "C:\\Users\\Braed\\Source\\Repos\\The-Procedural-Piano\\Piano.cs",
+              "DocumentMoniker": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\Piano.cs",
               "RelativeDocumentMoniker": "Piano.cs",
-              "ToolTip": "C:\\Users\\Braed\\Source\\Repos\\The-Procedural-Piano\\Piano.cs",
+              "ToolTip": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\Piano.cs",
               "RelativeToolTip": "Piano.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T00:35:49.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-02T00:35:49.738Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "IInstrument.cs",
-              "DocumentMoniker": "C:\\Users\\Braed\\Source\\Repos\\The-Procedural-Piano\\IInstrument.cs",
+              "DocumentMoniker": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\IInstrument.cs",
               "RelativeDocumentMoniker": "IInstrument.cs",
-              "ToolTip": "C:\\Users\\Braed\\Source\\Repos\\The-Procedural-Piano\\IInstrument.cs",
+              "ToolTip": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\IInstrument.cs",
               "RelativeToolTip": "IInstrument.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T23:44:35.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T23:44:35.11Z"
             },
             {
               "$type": "Document",
@@ -68,8 +66,7 @@
               "RelativeToolTip": "Note.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T23:44:10.489Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T23:44:10.489Z"
             },
             {
               "$type": "Document",
@@ -79,7 +76,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Braed\\source\\repos\\The-Procedural-Piano\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAuwCkAAABrAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwCkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T23:42:10.692Z",
               "EditorCaption": ""

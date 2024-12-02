@@ -27,3 +27,11 @@ C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\refint\The Pro
 C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.pdb
 C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.genruntimeconfig.cache
 C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\ref\The Procedural Piano.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\NAudio.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\NAudio.Asio.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\NAudio.Core.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\NAudio.Midi.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\NAudio.Wasapi.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\bin\Debug\net8.0\NAudio.WinMM.dll
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Procedural Piano.csproj.AssemblyReference.cache
+C:\Users\Braed\Source\Repos\The-Procedural-Piano\obj\Debug\net8.0\The Proc.2CA07860.Up2Date

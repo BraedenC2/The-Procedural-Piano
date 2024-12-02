@@ -23,7 +23,7 @@ static class Program {
             {
 
                 case (1):
-
+                    CreateSong();
                     break;
                 case (2):
                     break;
@@ -70,5 +70,59 @@ static class Program {
         return input;
     }
 
+    static void CreateSong() {
+        musicSequence.Clear();
+
+        int songLength = GetIntInput("Enter No. of chords: ");
+        IInstrument selectedInstrument = ChooseInstrument();
+
+        Random random = new Random();
+
+        for (int i = 0; i < songLength; i++) {
+
+            int chordSize = random.Next(3, 5);
+            List<Note> chord = new List<Note>();
+
+            for (int j = 0; j < chordSize; j++) {
+
+                Note note = (Note)random.Next(Enum.GetValues (typeof(Note)).Length);
+                if (!chord.Contains(note)) {
+                    chord.Add(note);
+                }
+            }
+
+            int duration = random.Next(200, 500);
+            musicSequence.Add($"{string.Join(", ", chord.Select(n=> n.ToString()))},{duration}");
+
+        }
+
+        Console.WriteLine("Composed!");
+
+    }
+
+    static int GetIntInput(string prompt) {
+        int value;
+        while (!int.TryParse(GetUserInput(prompt), out value) || value <= 0) {
+            Console.WriteLine("Invalid input. Must enter a positive integer.");
+        }
+        return value;
+    }
+
+    static IInstrument ChooseInstrument() {
+        while (true) {
+            Console.WriteLine("Available Instruments: ");
+            for (int i = 0; i < instruments.Count; i++) {
+                Console.WriteLine($"{i + 1}. {instruments[i].GetType().Name}");
+            }
+
+            int choice = GetIntInput("Choose an instrument (enter number): ");
+
+            if (choice > 0 && choice <= instruments.Count) {
+                return instruments[choice - 1];
+            } else {
+                Console.WriteLine("Invalid instrument selected.");
+            }
+        }
+    }
 
 }
