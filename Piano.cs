@@ -14,7 +14,7 @@ namespace The_Procedural_Piano {
         // We need it to play the chord from the wav file, AND then play the note itself. 
 
         private readonly string _musicFilesLocation = "NOTES";
-
+        static List<string> musicalSequence = new List<string>();
         public void PlayChord(List<Note> notes, int duration) {
             List<Thread> threads = new List<Thread>();
 
@@ -68,6 +68,29 @@ namespace The_Procedural_Piano {
                     $"\nSound file cannot be found fsr: {path}");
             }
 
+        }
+    
+        private void LoadNotes(string filePath)
+        {
+            try
+            {
+                 musicalSequence = File.ReadAllLines(filePath).ToList();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"there was an issue {e.Message}");
+            }
+        }
+        private static void SaveSong(string fileName )
+        {
+            try
+            {
+                File.WriteAllLines(fileName, musicalSequence);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"there was an issue {e.Message}");
+            }
         }
     }
 }

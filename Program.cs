@@ -16,6 +16,31 @@ static class Program {
 
 
         for (; ; ) {
+            DisplayMenu();
+            string? choice_str = Console.ReadLine()?.Trim();
+            int choice = int.Parse(choice_str); 
+            switch (choice)
+            {
+
+                case (1):
+
+                    break;
+                case (2):
+                    break;
+                case (3):
+                    break;
+                case (4):
+                    
+                    break;
+                case (5):
+                    Console.WriteLine("Thank you for joining us");
+                    ;
+                    break;
+                
+                default:
+                    Console.WriteLine("this was not an option");
+                    break;
+            }
             // We will need a switch statement here that allows user choices.
             // (It should called a display menu method. 
             // And then here should show a switch statement that allows user options.
