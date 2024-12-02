@@ -14,7 +14,7 @@ namespace The_Procedural_Piano {
         // We need it to play the chord from the wav file, AND then play the note itself. 
 
         private readonly string _musicFilesLocation = "NOTES";
-        static List<string> musicalSequence = new List<string>();
+        //static List<string> musicalSequence = new List<string>();
         public void PlayChord(List<Note> notes, int duration) {
             List<Thread> threads = new List<Thread>();
 
