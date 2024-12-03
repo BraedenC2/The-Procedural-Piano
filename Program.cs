@@ -1,18 +1,75 @@
 ﻿using NAudio.Wave;
+using System.Data.SqlTypes;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Sockets;
+using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
+using System.Text;
 using The_Procedural_Piano;
 
 namespace TheProceduralPiano;
 
 static class Program {
+    private static int _counter = 0;
+   
 
     static List<IInstrument> instruments = new List<IInstrument> {
             new Piano()
         // We can add more later.
         };
     static List<string> musicSequence = new List<string>();
+    private static async Task  obtainMusic(IPEndPoint enpoint)
+    {
+        string _name = "Nostes";
+        using Socket listener = new(
+            enpoint.AddressFamily,SocketType.Stream, ProtocolType.Tcp);
 
+        listener.Bind(enpoint);
+        listener.Listen();
+
+        for(; ; )
+        {
+            try
+            {
+                Console.WriteLine("Listening...");
+                var handler = await listener.AcceptAsync();
+                // this would get the notes
+                var buffer = new byte[2048];
+                var received = await handler.ReceiveAsync(buffer, SocketFlags.None);
+                string? response = Encoding.UTF8.GetString(buffer, 0, received);
+
+                //this wirtes to a file.
+                string path = $"{_name}{_counter}.file";
+                await File.WriteAllTextAsync(path, response);
+
+                var encodingByte = Encoding.UTF8.GetBytes("thank you");
+                await handler.SendAsync(encodingByte, 0);
+                try
+                {
+                    handler.Shutdown(SocketShutdown.Both);
+                }
+                finally
+                {
+                    handler.Close();
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("there was an error present");
+            }
+        }
+        try
+        {
+            listener.Shutdown(SocketShutdown.Both);
+        }
+        finally
+        {
+            listener.Close();
+
+        }
+    }
     private static void Main() {
 
 
