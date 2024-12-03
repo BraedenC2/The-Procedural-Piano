@@ -13,7 +13,7 @@ namespace TheProceduralPiano;
 static class Program {
     private static int _counter = 0;
   
-
+    static AudioManager audioManager = new AudioManager();
     static List<IInstrument> instruments = new List<IInstrument> {
             new Piano()
         // We can add more later.
@@ -87,7 +87,7 @@ static class Program {
                     CreateSong();
                     break;
                 case (2):
-                    Play();
+                   await Play();
                     break;
                 case (3):
                     Save(GetUserInput("Name: "));
@@ -133,7 +133,7 @@ static class Program {
         Console.WriteLine("2. Play current song");
         Console.WriteLine("3. Save");
         Console.WriteLine("4. Load");
-        Console.WriteLine("5. Exit");
+        Console.WriteLine("5. Play in the backgroun");
     }
 
     static string GetUserInput(string prompt) {
@@ -188,21 +188,28 @@ static class Program {
     static IInstrument ChooseInstrument() {
         while (true) {
             Console.WriteLine("Available Instruments: ");
-            for (int i = 0; i < instruments.Count; i++) {
-                Console.WriteLine($"{i + 1}. {instruments[i].GetType().Name}");
+            var instruments = audioManager.GetInstrament();
+            int i = 0;
+            foreach (var instr in instruments)
+            {
+                Console.WriteLine($"{i}, {instr.Key}");
+                i++;
             }
+            int choice = GetIntInput("enter a number):");
 
-            int choice = GetIntInput("Choose an instrument (enter number): ");
-
-            if (choice > 0 && choice <= instruments.Count) {
-                return instruments[choice - 1];
-            } else {
-                Console.WriteLine("Invalid instrument selected.");
+            if (choice >0 && choice <= instruments.Count)
+            {
+                return instruments.ElementAt(choice-1).Value;
             }
+            else
+            {
+                Console.WriteLine("invalid instrument slected");
+            }
+         
         }
     }
 
-    static void Play() {
+    static async Task Play() {
 
         if (!musicSequence.Any()) {
 
@@ -230,7 +237,7 @@ static class Program {
                 continue;
             }
 
-            selectedInstrument.PlayChord(notes, duration);
+            await audioManager.PlayInstrumentAsync(selectedInstrument.GetType().Name.ToLower(), notes, duration);
         }
         Console.WriteLine("Played!");
     }
@@ -244,4 +251,5 @@ static class Program {
             Debug.WriteLine($"At the Save method there is a exception: {e}");
         }
     }
+  
 }

@@ -1,17 +1,17 @@
 ﻿
 namespace The_Procedural_Piano
 {
-    public class AudioManager 
+    public class AudioManager
     {
         private Dictionary<string, IInstrument> instruments;
 
-        public AudioManager() 
+        public AudioManager()
         {
             instruments = new Dictionary<string, IInstrument>();
             instruments["pinao"] = new Piano();
 
         }
-        public async Task PlayInstrumentAsync(string instrumentName,List<Note> notes, int duration)
+        public async Task PlayInstrumentAsync(string instrumentName, List<Note> notes, int duration)
         {
             if (instruments.TryGetValue(instrumentName, out var audioSource))
             {
@@ -27,15 +27,12 @@ namespace The_Procedural_Piano
             instruments[name] = instrument;
         }
 
-        public async Task PlayMultipleInstruments(Dictionary<string,List<Note>>InstramentNotes, int duration )
-        {
-            List<Task> tasks = new List<Task>();
-           foreach( var kvp in InstramentNotes)
-            {
-                tasks.Add(PlayInstrumentAsync(kvp.Key, kvp.Value, duration));
-            }
+       
 
-            await Task.WhenAll(tasks);
-        }
-    }
+        public  Dictionary<string, IInstrument> GetInstrament()
+        {
+        return instruments;
+           }
+           
+}
 }
