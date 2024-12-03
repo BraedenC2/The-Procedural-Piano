@@ -15,15 +15,15 @@ namespace The_Procedural_Piano {
 
         private readonly string _musicFilesLocation = "NOTES";
         //static List<string> musicalSequence = new List<string>();
-        public void PlayChord(List<Note> notes, int duration) {
-            List<Thread> threads = new List<Thread>();
-
+        public async Task PlayChord(List<Note> notes, int duration) {
+//List<Thread> threads = new List<Thread>();
+List<Task> tasks = new List<Task>();
             // We COULD change these to var probably. But idk if Brian will mark us down for vars.
             // Up to you if u wanna change it. If we want to add more chords, we can ;D
             foreach (Note note in notes) {
 
 
-                PlayNote(note);
+                tasks.Add(PlayNote(note));
 
                 // Uncomment this if we wanna keep threads (It sounds better without it, but I'd like to make it
                 // sound more... idk. Give it more ability i guess.
@@ -34,16 +34,17 @@ namespace The_Procedural_Piano {
                 //thread.Start();
 
             }
-
+            await Task.WhenAll(tasks);
+            await Task.Delay(duration);
             // This will make sure that the program waits for the other notes to finish.
             //foreach (Thread thread in threads) thread.Join();
 
             // This pauses randomly between chords
             //Random random = new Random(); 
-            Thread.Sleep(duration);
+           // Thread.Sleep(duration);
         }
 
-        private void PlayNote(Note note) {
+        private async Task PlayNote(Note note) {
             string fileName = $"{note} NOTE.WAV";
             string path = Path.Combine(_musicFilesLocation, fileName);
 
@@ -61,7 +62,7 @@ namespace The_Procedural_Piano {
                         output.Init(reader);
                         output.Play();
                         while (output.PlaybackState == PlaybackState.Playing) {
-                            Thread.Sleep(50);
+                            await Task.Delay(50);
                         }
                     }
 

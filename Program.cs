@@ -12,7 +12,7 @@ namespace TheProceduralPiano;
 
 static class Program {
     private static int _counter = 0;
-   
+  
 
     static List<IInstrument> instruments = new List<IInstrument> {
             new Piano()
