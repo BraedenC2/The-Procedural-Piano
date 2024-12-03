@@ -70,8 +70,11 @@ static class Program {
 
         }
     }
-    private static void Main() {
+    private static async Task  Main() {
+        IPEndPoint theIp = new IPEndPoint(IPAddress.Parse("127.0.0.1"),4444);
+        // this will fun the file reciver in the back ground
 
+       await Task.Run(() => obtainMusic(theIp));
 
         for (; ; ) {
             DisplayMenu();
