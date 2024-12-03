@@ -96,6 +96,21 @@ static class Program {
                     Load(GetUserInput($"File name: "));
                     break;
                 case (5):
+                    int anOption = GetIntInput("please enter how many instraments you would like to play");
+                    for(int i =0 ; i < anOption;i++)
+                    {
+                        Load(GetUserInput($"File name: "));
+                        await Play();
+                    }    
+                    break;
+                case (6):
+                    await Task.Run(async() =>
+                     {
+                         Load(GetUserInput($"File name: "));
+                         await Play();
+                     });
+                    break;
+                case (7):
                     Console.WriteLine("Thank you for joining us");
                     return;
                 default:
@@ -133,7 +148,9 @@ static class Program {
         Console.WriteLine("2. Play current song");
         Console.WriteLine("3. Save");
         Console.WriteLine("4. Load");
-        Console.WriteLine("5. Play in the backgroun");
+        Console.WriteLine("5. Play multiple instraments");
+        Console.WriteLine("6. play in the back ground");
+        Console.WriteLine("7. Exit");
     }
 
     static string GetUserInput(string prompt) {
@@ -195,7 +212,7 @@ static class Program {
                 Console.WriteLine($"{i}, {instr.Key}");
                 i++;
             }
-            int choice = GetIntInput("enter a number):");
+            int choice = GetIntInput("enter a number");
 
             if (choice >0 && choice <= instruments.Count)
             {
