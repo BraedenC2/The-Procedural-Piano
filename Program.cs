@@ -40,7 +40,7 @@ static class Program {
                 string? response = Encoding.UTF8.GetString(buffer, 0, received);
 
                 //this wirtes to a file.
-                string path = $"{_name}{_counter}.file";
+                string path = $"{_name}{_counter}";
                 await File.WriteAllTextAsync(path, response);
 
                 var encodingByte = Encoding.UTF8.GetBytes("thank you");
@@ -74,7 +74,7 @@ static class Program {
         IPEndPoint theIp = new IPEndPoint(IPAddress.Parse("127.0.0.1"),4444);
         // this will fun the file reciver in the back ground
 
-       await Task.Run(() => obtainMusic(theIp));
+        Task.Run(async () =>await obtainMusic(theIp));
 
         for (; ; ) {
             DisplayMenu();
@@ -104,7 +104,7 @@ static class Program {
                     }    
                     break;
                 case (6):
-                    await Task.Run(async() =>
+                     Task.Run(async() =>
                      {
                          Load(GetUserInput($"File name: "));
                          await Play();
