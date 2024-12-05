@@ -6,8 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using NAudio.Wave;
 
-namespace The_Procedural_Piano {
-    public class Piano : IInstrument {
+namespace The_Procedural_Piano
+{
+    public class Piano : IInstrument
+    {
 
         // This class will need 2 methods probably.
 
@@ -15,15 +17,17 @@ namespace The_Procedural_Piano {
 
         private readonly string _musicFilesLocation = "NOTES";
         //static List<string> musicalSequence = new List<string>();
-        public async Task PlayChord(List<Note> notes, int duration) {
-//List<Thread> threads = new List<Thread>();
-List<Task> tasks = new List<Task>();
+        public void PlayChord(List<Note> notes, int duration)
+        {
+            List<Thread> threads = new List<Thread>();
+
             // We COULD change these to var probably. But idk if Brian will mark us down for vars.
             // Up to you if u wanna change it. If we want to add more chords, we can ;D
-            foreach (Note note in notes) {
+            foreach (Note note in notes)
+            {
 
 
-                tasks.Add(PlayNote(note));
+                PlayNote(note);
 
                 // Uncomment this if we wanna keep threads (It sounds better without it, but I'd like to make it
                 // sound more... idk. Give it more ability i guess.
@@ -34,22 +38,24 @@ List<Task> tasks = new List<Task>();
                 //thread.Start();
 
             }
-            await Task.WhenAll(tasks);
-            await Task.Delay(duration);
+
             // This will make sure that the program waits for the other notes to finish.
             //foreach (Thread thread in threads) thread.Join();
 
             // This pauses randomly between chords
             //Random random = new Random(); 
-           // Thread.Sleep(duration);
+            Thread.Sleep(duration);
         }
 
-        private async Task PlayNote(Note note) {
+        private void PlayNote(Note note)
+        {
             string fileName = $"{note} NOTE.WAV";
             string path = Path.Combine(_musicFilesLocation, fileName);
 
-            if (File.Exists(path)) {
-                try {
+            if (File.Exists(path))
+            {
+                try
+                {
                     // IN ORDER FOR THIS TO WORK HERE AND HERE FROM NOW ON, YOU NEED TO DOWNLOAD
                     // THE NAudio.Wave NeGet!!!! 
 
@@ -58,25 +64,31 @@ List<Task> tasks = new List<Task>();
                     // we should maybe switch to a different NuGet library.
 
                     using (MediaFoundationReader reader = new MediaFoundationReader(path))
-                    using (WaveOutEvent output = new WaveOutEvent()) {
+                    using (WaveOutEvent output = new WaveOutEvent())
+                    {
                         output.Init(reader);
                         output.Play();
-                        while (output.PlaybackState == PlaybackState.Playing) {
-                            await Task.Delay(50);
+                        while (output.PlaybackState == PlaybackState.Playing)
+                        {
+                            Thread.Sleep(50);
                         }
                     }
 
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Debug.WriteLine($"Error at method PlayNote in WAVCORD Class. " +
                         $"\n Path: {path}: {e.Message}.");
                 }
-            } else {
+            }
+            else
+            {
                 Debug.WriteLine($"Error at method PlayNote in WAVCORD Class." +
                     $"\nSound file cannot be found fsr: {path}");
             }
 
         }
-    
-        
+
+
     }
 }

@@ -10,6 +10,6 @@ namespace The_Procedural_Piano {
         // Using List will take THE Enum of Notes, and then take a duration of int.
         // This is pretty self explainitory. DONT ADD ANYMORE HERE. This interface is
         // done (unless theres bugs directly from here).
-        Task PlayChord(List<Note> notes, int duration);
+        void PlayChord(List<Note> notes, int duration);
     }
 }
