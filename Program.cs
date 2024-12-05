@@ -31,27 +31,41 @@ static class Program
             try
             {
                 Console.WriteLine("Listening...");
+
                 var handler = await listener.AcceptAsync();
-                // this would get the notes
-                var buffer = new byte[2048];
-                var received = await handler.ReceiveAsync(buffer, SocketFlags.None);
-                string? response = Encoding.UTF8.GetString(buffer, 0, received);
+                _ = Task.Run(async () =>
+               {
+                   try
+                   {
 
-                //this wirtes to a file.
-                string path = $"{_name}{_counter}";
-                await File.WriteAllTextAsync(path, response);
+                       // this would get the notes
+                       var buffer = new byte[2048];
+                       var received = await handler.ReceiveAsync(buffer, SocketFlags.None);
+                       string? response = Encoding.UTF8.GetString(buffer, 0, received);
 
-                var encodingByte = Encoding.UTF8.GetBytes("thank you");
-                await handler.SendAsync(encodingByte, 0);
-                try
-                {
-                    handler.Shutdown(SocketShutdown.Both);
-                }
-                finally
-                {
-                    handler.Close();
+                       //this wirtes to a file.
+                       string path = $"{_name}{_counter}";
+                       await File.WriteAllTextAsync(path, response);
 
-                }
+                       var encodingByte = Encoding.UTF8.GetBytes("thank you");
+                       await handler.SendAsync(encodingByte, 0);
+                   }
+                   catch (Exception ex)
+                   {
+                       Console.WriteLine($"Error handling client: {ex.Message}");
+                   }
+                   finally
+                   {
+                       try
+                       {
+                           handler.Shutdown(SocketShutdown.Both);
+                       }
+                       catch { /* Ignore shutdown errors */ }
+
+                       handler.Close();
+                   }
+
+               });
             }
             catch (Exception e)
             {
