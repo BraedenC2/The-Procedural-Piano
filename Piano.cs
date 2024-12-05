@@ -6,8 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using NAudio.Wave;
 
-namespace The_Procedural_Piano {
-    public class Piano : IInstrument {
+namespace The_Procedural_Piano
+{
+    public class Piano : IInstrument
+    {
 
         // This class will need 2 methods probably.
 
@@ -15,12 +17,14 @@ namespace The_Procedural_Piano {
 
         private readonly string _musicFilesLocation = "NOTES";
         //static List<string> musicalSequence = new List<string>();
-        public void PlayChord(List<Note> notes, int duration) {
+        public void PlayChord(List<Note> notes, int duration)
+        {
             List<Thread> threads = new List<Thread>();
 
             // We COULD change these to var probably. But idk if Brian will mark us down for vars.
             // Up to you if u wanna change it. If we want to add more chords, we can ;D
-            foreach (Note note in notes) {
+            foreach (Note note in notes)
+            {
 
 
                 PlayNote(note);
@@ -43,12 +47,15 @@ namespace The_Procedural_Piano {
             Thread.Sleep(duration);
         }
 
-        private void PlayNote(Note note) {
+        private void PlayNote(Note note)
+        {
             string fileName = $"{note} NOTE.WAV";
             string path = Path.Combine(_musicFilesLocation, fileName);
 
-            if (File.Exists(path)) {
-                try {
+            if (File.Exists(path))
+            {
+                try
+                {
                     // IN ORDER FOR THIS TO WORK HERE AND HERE FROM NOW ON, YOU NEED TO DOWNLOAD
                     // THE NAudio.Wave NeGet!!!! 
 
@@ -57,25 +64,31 @@ namespace The_Procedural_Piano {
                     // we should maybe switch to a different NuGet library.
 
                     using (MediaFoundationReader reader = new MediaFoundationReader(path))
-                    using (WaveOutEvent output = new WaveOutEvent()) {
+                    using (WaveOutEvent output = new WaveOutEvent())
+                    {
                         output.Init(reader);
                         output.Play();
-                        while (output.PlaybackState == PlaybackState.Playing) {
+                        while (output.PlaybackState == PlaybackState.Playing)
+                        {
                             Thread.Sleep(50);
                         }
                     }
 
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Debug.WriteLine($"Error at method PlayNote in WAVCORD Class. " +
                         $"\n Path: {path}: {e.Message}.");
                 }
-            } else {
+            }
+            else
+            {
                 Debug.WriteLine($"Error at method PlayNote in WAVCORD Class." +
                     $"\nSound file cannot be found fsr: {path}");
             }
 
         }
-    
-        
+
+
     }
 }
